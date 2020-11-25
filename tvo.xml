@@ -10,7 +10,7 @@
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.3</version>
+	<version>0.0.4</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>BESCHREIBUNG DER KOMPONENTE FOLGT</description>
 
@@ -29,6 +29,7 @@
 		<filename>tvo.php</filename>
 		<filename>controller.php</filename>
 		<folder>views</folder>
+		<folder>models</folder>
 	</files>
 
 	<administration>
