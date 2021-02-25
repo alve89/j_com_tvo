@@ -49,5 +49,5 @@
 	</administration>
 	<updateservers>
 		 <server type="extension" priority="2" name="TVO Updates">https://raw.githubusercontent.com/alve89/j_com_tvo/master/tvo.xml</server>
-	</updateservers>
+	</updateservers> 
 </extension>
