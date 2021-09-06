@@ -5,7 +5,7 @@
         <element>com_tvo</element>
         <type>component</type>
         <version>0.0.9</version>
-        <client>0</client>
+        <client>administrator</client>
         <infourl title="com_tvp Update Server" />
         <downloads>
             <downloadurl
