@@ -17,34 +17,57 @@ defined('_JEXEC') or die('Restricted access');
  */
 class TvoModelTvo extends JModelItem {
 	/**
-	 * @var string message
+	 * @var array messages
 	 */
-	protected $message;
+	protected $messages;
+
+	/**
+	 * Method to get a table object, load it if necessary.
+	 *
+	 * @param   string  $type    The table name. Optional.
+	 * @param   string  $prefix  The class prefix. Optional.
+	 * @param   array   $config  Configuration array for model. Optional.
+	 *
+	 * @return  JTable  A JTable object
+	 *
+	 * @since   1.6
+	 */
+	public function getTable($type = 'tvoTeam', $prefix = 'TvoTable', $config = array())
+	{
+		return JTable::getInstance($type, $prefix, $config);
+	}
 
 	/**
 	 * Get the message
-   *
-	 * @return  string  The message to be displayed to the user
+	 *
+	 * @param   integer  $id  Greeting Id
+	 *
+	 * @return  string        Fetched String from Table for relevant Id
 	 */
-	public function getMsg() {
-		if (!isset($this->message)) {
-			//$this->message = 'Hello World from model!';
+	public function getMsg($id = 1)
+	{
+		if (!is_array($this->messages))
+		{
+			$this->messages = array();
+		}
 
-			// Check if an option (set in /views/tvo/tmpl/default.xml => fields) was passed in the URL (e.g. ?option=2) or rather if this option was set in administrator => menu item => COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_LABEL
+		if (!isset($this->messages[$id]))
+		{
+			// Request the selected id
 			$jinput = JFactory::getApplication()->input;
 			$id     = $jinput->get('id', 1, 'INT');
 
-			switch ($id) {
-				case 2:
-					$this->message = 'Good bye World!';
-					break;
-				default:
-				case 1:
-					$this->message = 'Hello World!';
-					break;
-			}
+			// Get a TableHelloWorld instance
+			$table = $this->getTable();
+
+			// Load the message
+			$table->load($id);
+
+			// Assign the message
+			$this->messages[$id] = $table->title;
 		}
-		return $this->message;
+
+		return $this->messages[$id];
 	}
 
 

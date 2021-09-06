@@ -10,9 +10,20 @@
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.7</version>
+	<version>0.0.8</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>BESCHREIBUNG DER KOMPONENTE FOLGT</description>
+
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8mb4">sql/install.mysql.utf8mb4.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8mb4">sql/uninstall.mysql.utf8mb4.sql</file>
+		</sql>
+	</uninstall>
 
 	<update> <!-- Runs on update; New since J2.5 -->
 		<schemas>
@@ -45,6 +56,10 @@
 			<filename>tvo.php</filename>
 			<!-- SQL files section -->
 			<folder>sql</folder>
+			<!-- tables files section -->
+			<folder>tables</folder>
+			<!-- models files section -->
+			<folder>models</folder>
 		</files>
 	</administration>
 	<updateservers>
