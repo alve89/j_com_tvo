@@ -1,16 +1,13 @@
-DROP TABLE IF EXISTS `#__tvo_teams`;
+DROP TABLE IF EXISTS `#__helloworld`;
 
-CREATE TABLE `#__tvo_teams` (
+CREATE TABLE `#__helloworld` (
 	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
-  `title`    VARCHAR(20) NOT NULL DEFAULT 'NoNameSet',
-	`teamId`   INT(8) NOT NULL,
-  `published` BOOLEAN DEFAULT FALSE,
+	`greeting` VARCHAR(25) NOT NULL,
+	`published` tinyint(4) NOT NULL DEFAULT '1',
 	PRIMARY KEY (`id`)
 )
-ENGINE=InnoDB
-DEFAULT CHARSET=utf8mb4
-DEFAULT COLLATE=utf8mb4_unicode_ci;
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `#__tvo_teams` (`teamId`, `title`) VALUES
-('123456', 'Testteam01'),
-('234567', 'Testteam02');
+INSERT INTO `#__helloworld` (`greeting`) VALUES
+('Hello beautiful World!'),
+('Good bye awful World!');

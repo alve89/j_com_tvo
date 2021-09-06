@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Administrator
- * @subpackage  com_helloworld
+ * @subpackage  com_tvo
  *
  * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -13,18 +13,18 @@ defined('_JEXEC') or die('Restricted access');
 JFormHelper::loadFieldClass('list');
 
 /**
- * TvoTeams Form Field class for the HelloWorld component
+ * HelloWorld Form Field class for the HelloWorld component
  *
  * @since  0.0.1
  */
-class JFormFieldTvoTeams extends JFormFieldList
+class JFormFieldTvoTeam extends JFormFieldList
 {
 	/**
 	 * The field type.
 	 *
 	 * @var         string
 	 */
-	protected $type = 'TvoTeams';
+	protected $type = 'TvoTeam';
 
 	/**
 	 * Method to get a list of options for a list input.
@@ -35,16 +35,17 @@ class JFormFieldTvoTeams extends JFormFieldList
 	{
 		$db    = JFactory::getDBO();
 		$query = $db->getQuery(true);
-		$query->select('id,teamId,title,published');
-		$query->from('#__tvo_teams');
+		$query->select('id,greeting');
+		$query->from('#__helloworld');
 		$db->setQuery((string) $query);
-		$teams = $db->loadObjectList();
+		$messages = $db->loadObjectList();
 		$options  = array();
 
-		if ($teams) {
-			foreach ($teams as $team)
+		if ($messages)
+		{
+			foreach ($messages as $message)
 			{
-				$options[] = JHtml::_('select.option', $team->teamId, $team->title, $team->published);
+				$options[] = JHtml::_('select.option', $message->id, $message->greeting);
 			}
 		}
 

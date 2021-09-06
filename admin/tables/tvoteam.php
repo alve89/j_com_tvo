@@ -14,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class TvoTableTvoTeams extends JTable
+class TvoTableTvoTeam extends JTable
 {
 	/**
 	 * Constructor
@@ -23,6 +23,6 @@ class TvoTableTvoTeams extends JTable
 	 */
 	function __construct(&$db)
 	{
-		parent::__construct('#__tvo_teams', 'id', $db);
+		parent::__construct('#__helloworld', 'id', $db);
 	}
 }

@@ -11,11 +11,12 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Tvo Model
+ * HelloWorld Model
  *
  * @since  0.0.1
  */
-class TvoModelTvo extends JModelItem {
+class TvoModelTvo extends JModelItem
+{
 	/**
 	 * @var array messages
 	 */
@@ -32,7 +33,7 @@ class TvoModelTvo extends JModelItem {
 	 *
 	 * @since   1.6
 	 */
-	public function getTable($type = 'tvoTeam', $prefix = 'TvoTable', $config = array())
+	public function getTable($type = 'TvoTeam', $prefix = 'TvoTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
@@ -64,11 +65,9 @@ class TvoModelTvo extends JModelItem {
 			$table->load($id);
 
 			// Assign the message
-			$this->messages[$id] = $table->title;
+			$this->messages[$id] = $table->greeting;
 		}
 
 		return $this->messages[$id];
 	}
-
-
 }

@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS `#__tvo_teams`;
+DROP TABLE IF EXISTS `#__helloworld`;
