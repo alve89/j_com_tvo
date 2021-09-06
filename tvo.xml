@@ -3,14 +3,14 @@
 
 	<name>TVO</name>
 	<!-- The following elements are optional and free of formatting constraints -->
-	<creationDate>November 2020</creationDate>
+	<creationDate>September 2021</creationDate>
 	<author>Stefan Herzog</author>
 	<authorEmail>joomla@devel.stefan-herzog.com</authorEmail>
 	<authorUrl>https://github.com/alve89</authorUrl>
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.6</version>
+	<version>0.0.7</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>BESCHREIBUNG DER KOMPONENTE FOLGT</description>
 
@@ -48,6 +48,6 @@
 		</files>
 	</administration>
 	<updateservers>
-		 <server type="extension" priority="2" name="TVO Updates">https://raw.githubusercontent.com/alve89/j_com_tvo/master/tvo.xml</server>
-	</updateservers> 
+		 <server type="extension" priority="2" name="com_tvo_updateserver">https://raw.githubusercontent.com/alve89/j_com_tvo/master/updates.xml</server>
+	</updateservers>
 </extension>
