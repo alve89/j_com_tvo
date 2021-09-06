@@ -11,6 +11,6 @@ ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 DEFAULT COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `#__tvo_teams` (`teamId`, `teamName`) VALUES
+INSERT INTO `#__tvo_teams` (`teamId`, `title`) VALUES
 ('123456', 'Testteam01'),
 ('234567', 'Testteam02');
