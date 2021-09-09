@@ -15,59 +15,112 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class TvoModelTvo extends JModelItem
+// class TvoModelTvo extends JModelItem
+// {
+// 	/**
+// 	 * @var array messages
+// 	 */
+// 	protected $messages;
+//
+// 	/**
+// 	 * Method to get a table object, load it if necessary.
+// 	 *
+// 	 * @param   string  $type    The table name. Optional.
+// 	 * @param   string  $prefix  The class prefix. Optional.
+// 	 * @param   array   $config  Configuration array for model. Optional.
+// 	 *
+// 	 * @return  JTable  A JTable object
+// 	 *
+// 	 * @since   1.6
+// 	 */
+// 	public function getTable($type = 'TvoTeam', $prefix = 'TvoTable', $config = array())
+// 	{
+// 		return JTable::getInstance($type, $prefix, $config);
+// 	}
+//
+// 	/**
+// 	 * Get the message
+// 	 *
+// 	 * @param   integer  $id  Greeting Id
+// 	 *
+// 	 * @return  string        Fetched String from Table for relevant Id
+// 	 */
+// 	public function getMsg($id = 1) {
+// 		if (!is_array($this->messages)) {
+// 			$this->messages = array();
+// 		}
+//
+// 		if (!isset($this->messages[$id])) {
+// 			// Request the selected id
+// 			$jinput = JFactory::getApplication()->input;
+// 			$id     = $jinput->get('id', 1, 'INT'); // Get record from database which is specified in Menu => Menu item => com_tvo
+//
+// 			// Get a TableTvo instance
+// 			$table = $this->getTable();
+//
+// 			// Load the message
+// 			$table->load($id);
+//
+// 			// Assign the message
+// 			$this->messages[$id] = $table->greeting;
+// 		}
+//
+// 		return $this->messages[$id];
+// 	}
+// }
+//
+// $db = JFactory::getDbo();
+//
+// $query = $db->getQuery(true);
+
+class TvoModelTvo extends JModelList
 {
 	/**
 	 * @var array messages
 	 */
 	protected $messages;
 
-	/**
-	 * Method to get a table object, load it if necessary.
-	 *
-	 * @param   string  $type    The table name. Optional.
-	 * @param   string  $prefix  The class prefix. Optional.
-	 * @param   array   $config  Configuration array for model. Optional.
-	 *
-	 * @return  JTable  A JTable object
-	 *
-	 * @since   1.6
-	 */
-	public function getTable($type = 'TvoTeam', $prefix = 'TvoTable', $config = array())
-	{
-		return JTable::getInstance($type, $prefix, $config);
-	}
+	// /**
+	//  * Method to get a table object, load it if necessary.
+	//  *
+	//  * @param   string  $type    The table name. Optional.
+	//  * @param   string  $prefix  The class prefix. Optional.
+	//  * @param   array   $config  Configuration array for model. Optional.
+	//  *
+	//  * @return  JTable  A JTable object
+	//  *
+	//  * @since   1.6
+	//  */
+	// public function getTable($type = 'TvoTeam', $prefix = 'TvoTable', $config = array())
+	// {
+	// 	return JTable::getInstance($type, $prefix, $config);
+	// }
 
-	/**
-	 * Get the message
-	 *
-	 * @param   integer  $id  Greeting Id
-	 *
-	 * @return  string        Fetched String from Table for relevant Id
-	 */
-	public function getMsg($id = 1)
-	{
-		if (!is_array($this->messages))
-		{
-			$this->messages = array();
+
+
+	 /**
+		 * Get the message
+		 *
+		 * @param   integer  $id  Greeting
+		 * @return  string        Fetched String from Table for relevant Id
+		 */
+		public function getMsgs() {
+			if (!is_array($this->messages)) {
+				$this->messages = array();
+			}
+
+			$db = JFactory::getDbo();
+			$query = $db->getQuery(true);
+
+			$query->select('*');
+			$query->from($db->quoteName('#__helloworld'));
+			//$query->where($db->quoteName('profile_key') . ' LIKE ' . $db->quote('custom.%'));
+			$query->order('id ASC');
+
+			$db->setQuery($query);
+			$this->messages = $db->loadObjectList();
+
+
+			return $this->messages;
 		}
-
-		if (!isset($this->messages[$id]))
-		{
-			// Request the selected id
-			$jinput = JFactory::getApplication()->input;
-			$id     = $jinput->get('id', 1, 'INT');
-
-			// Get a TableHelloWorld instance
-			$table = $this->getTable();
-
-			// Load the message
-			$table->load($id);
-
-			// Assign the message
-			$this->messages[$id] = $table->greeting;
-		}
-
-		return $this->messages[$id];
 	}
-}

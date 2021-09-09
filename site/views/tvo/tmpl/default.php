@@ -9,5 +9,12 @@
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+
+//echo $this->msg;
+
+foreach($this->msgs as $msg) {
+  echo $msg->greeting . '<br />';
+}
+
+
 ?>
-<h1><?php echo $this->msg; ?></h1>
