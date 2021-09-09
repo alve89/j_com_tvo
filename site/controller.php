@@ -13,6 +13,5 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class TvoController extends JControllerLegacy
-{
+class TvoController extends JControllerLegacy {
 }

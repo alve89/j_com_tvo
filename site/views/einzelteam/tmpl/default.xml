@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-	<layout title="COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_TITLE">
-		<message>COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_DESC</message>
+	<layout title="COM_HELLOWORLD_HELLOWORLD_VIEW_EINZELTEAM_DEFAULT_TITLE">
+		<message>COM_HELLOWORLD_HELLOWORLD_VIEW_EINZELTEAM_DEFAULT_DESC</message>
 	</layout>
 	<fields
 			name="request"
@@ -11,8 +11,8 @@
 			<field
 					name="id"
 					type="TvoTeam"
-					label="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_LABEL"
-					description="COM_HELLOWORLD_HELLOWORLD_FIELD_GREETING_DESC"
+					label="COM_HELLOWORLD_HELLOWORLD_FIELD_TITLE_LABEL"
+					description="COM_HELLOWORLD_HELLOWORLD_FIELD_TITLE_DESC"
 					/>
 		</fieldset>
 	</fields>

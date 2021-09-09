@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class TvoViewTvo extends JViewLegacy
+class TvoViewEinzelteam extends JViewLegacy
 {
 	/**
 	 * Display the TVO view
@@ -28,9 +28,7 @@ class TvoViewTvo extends JViewLegacy
 	{
 		// Assign data to the view
 		$this->msg = 'Hello World site by view';
-		//$this->msg = $this->get('Msg'); // calls model -> getMsg()
-
-		$this->msgs = $this->get('Msgs');
+		$this->msg = $this->get('Msg'); // calls model -> getMsg()
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) {

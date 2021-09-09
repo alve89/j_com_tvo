@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 //echo $this->msg;
 
 foreach($this->msgs as $msg) {
-  echo $msg->greeting . '<br />';
+  echo $msg->title . '<br />';
 }
 
 
