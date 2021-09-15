@@ -10,7 +10,7 @@
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.11</version>
+	<version>0.0.12</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>BESCHREIBUNG DER KOMPONENTE FOLGT</description>
 
@@ -56,13 +56,11 @@
 			<filename>tvo.php</filename>
 			<!-- SQL files section -->
 			<folder>sql</folder>
-			<!-- tables files section -->
-			<folder>tables</folder>
 			<!-- models files section -->
 			<folder>models</folder>
 		</files>
 	</administration>
 	<updateservers>
-		 <server type="extension" priority="2" name="com_tvo_updateserver">https://raw.githubusercontent.com/alve89/j_com_tvo/master/updates.xml</server>
+		 <server type="extension" priority="1" name="com_tvo_updateserver">https://raw.githubusercontent.com/alve89/j_com_tvo/master/updates.xml</server>
 	</updateservers>
 </extension>

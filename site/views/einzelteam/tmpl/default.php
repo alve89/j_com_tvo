@@ -9,7 +9,15 @@
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+require_once('./components'. DS . JFactory::getApplication()->input->get('option') . DS . 'helper.php');
+?>
 
-echo $this->msg;
+<h3><?=$this->team->teamName; // retrieve data from view (and earlier from model), the team is selected in menu item?></h3>
+
+
+<?php
+
+
+ComTvoHelper::varDump($this->team);
 
 ?>

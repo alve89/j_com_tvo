@@ -37,17 +37,30 @@ class TvoModelTeamListe extends JModelList
 			}
 
 			$db = JFactory::getDbo();
-			$query = $db->getQuery(true);
+			$prefix = $db->getPrefix();
+			$availableTables = $db->setQuery('SHOW TABLES')->loadColumn();
+			$tablesNotFound = false;
 
-			$query->select('*');
-			$query->from($db->quoteName('#__tvo_teams'));
-			//$query->where($db->quoteName('profile_key') . ' LIKE ' . $db->quote('custom.%'));
-			$query->order('id ASC');
+			if(!array_search($prefix.'tvo_teams', $availableTables) ) {
+			  $tablesNotFound = true;
+			}
+			if(!array_search($prefix.'tvo_games', $availableTables) ) {
+			  $tablesNotFound = true;
+			}
 
-			$db->setQuery($query);
-			$this->messages = $db->loadObjectList();
+			if( !$tablesNotFound ) {
+				$db = JFactory::getDbo();
+				$query = $db->getQuery(true);
 
+				$query->select('*');
+				$query->from($db->quoteName('#__tvo_teams'));
+				//$query->where($db->quoteName('profile_key') . ' LIKE ' . $db->quote('custom.%'));
+				$query->order('id ASC');
 
-			return $this->messages;
+				$db->setQuery($query);
+				$this->messages = $db->loadObjectList();
+				return $this->messages;
+			}
+			return NULL;
 		}
 	}

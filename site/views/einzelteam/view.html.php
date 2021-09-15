@@ -24,11 +24,18 @@ class TvoViewEinzelteam extends JViewLegacy
 	 *
 	 * @return  void
 	 */
-	function display($tpl = null)
-	{
+	function display($tpl = null) {
 		// Assign data to the view
-		$this->msg = 'Hello World site by view';
-		$this->msg = $this->get('Msg'); // calls model -> getMsg()
+		$this->team = 'Hello World site by view';
+		$this->team = $this->get('Team'); // calls model -> getTeam()
+
+		if($this->team == NULL) {
+
+
+			// ERROR HANDLING
+
+
+		}
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) {

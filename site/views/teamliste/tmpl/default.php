@@ -9,6 +9,8 @@
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+require_once('./components'. DS . JFactory::getApplication()->input->get('option') . DS . 'helper.php');
+
 
 //echo $this->msg;
 
@@ -16,5 +18,6 @@ foreach($this->msgs as $msg) {
   echo $msg->title . '<br />';
 }
 
+ComTvoHelper::varDump('TEAMLISTE');
 
 ?>
