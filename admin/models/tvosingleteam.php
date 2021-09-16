@@ -14,8 +14,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class TvoModelTvo extends JModelList
-{
+class TvoModelTvoSingleTeam extends JModelList {
 	/**
 	 * Method to build an SQL query to load the list data.
 	 *
@@ -29,7 +28,7 @@ class TvoModelTvo extends JModelList
 
 		// Create the base select statement.
 		$query->select('*')
-                ->from($db->quoteName('#__tvo_teams'));
+          ->from($db->quoteName('#__tvo_teams'));
 
 		return $query;
 	}

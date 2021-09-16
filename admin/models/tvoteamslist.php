@@ -29,7 +29,7 @@ class TvoModelTvoTeamsList extends JModelList
 
 		// Create the base select statement.
 		$query->select('*')
-                ->from($db->quoteName('#__tvo_teams'));
+          ->from($db->quoteName('#__tvo_teams'));
 
 		return $query;
 	}
