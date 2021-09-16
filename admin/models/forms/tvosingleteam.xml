@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+				addrulepath="/administrator/components/com_tvo/models/rules"
+>
+	<fieldset>
+		<field
+				name="id"
+				type="hidden"
+				/>
+				<field
+						name="teamName"
+						type="text"
+						label="COM_HELLOWORLD_HELLOWORLD_TEAM_NAME_LABEL"
+						description="COM_HELLOWORLD_HELLOWORLD_TEAM_NAME_DESC"
+						size="40"
+						class="inputbox"
+						default=""
+						required="true"
+						validate="tvo.regex"
+						regex="^[a-zA-Z0-9][a-zA-Z0-9 -]+[a-zA-Z0-9]$"
+						/>
+				<field
+						name="title"
+						type="text"
+						label="COM_HELLOWORLD_HELLOWORLD_GREETING_LABEL"
+						description="COM_HELLOWORLD_HELLOWORLD_GREETING_DESC"
+						size="40"
+						class="inputbox"
+						default=""
+						required="true"
+						validate="teamTitle"
+						/>
+				<field
+						name="teamGamesId"
+						type="number"
+						min="0"
+						max="999999"
+						label="COM_HELLOWORLD_HELLOWORLD_TEAM_GAMES_ID_LABEL"
+						description="COM_HELLOWORLD_HELLOWORLD_GAMES_ID_DESC"
+						default=""
+						required="true"
+						/>
+				<field
+						name="teamTableId"
+						type="number"
+						min="0"
+						max="999999"
+						label="COM_HELLOWORLD_HELLOWORLD_TEAM_TABLE_ID_LABEL"
+						description="COM_HELLOWORLD_HELLOWORLD_TABLE_ID_DESC"
+						default=""
+						required="true"
+						/>
+				<field name="published" type="radio" default="1" label="Veröffentlichen" description="" class="btn-group">
+					<option value="1">Veröffentlicht</option>
+					<option value="0">Versteckt</option>
+				</field>
+	</fieldset>
+</form>

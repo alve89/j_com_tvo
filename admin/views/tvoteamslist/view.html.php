@@ -38,7 +38,18 @@ class TvoViewTvoTeamsList extends JViewLegacy
 			return false;
 		}
 
+		// Set the toolbar
+		$this->addToolBar();
+
 		// Display the template
 		parent::display($tpl);
+	}
+
+	protected function addToolBar() {
+		JToolbarHelper::title(JText::_('COM_HELLOWORLD_MANAGER_HELLOWORLDS'));
+		JToolbarHelper::addNew('tvosingleteam.add');
+		JToolbarHelper::editList('tvosingleteam.edit');
+		JToolbarHelper::custom('tvofileupload.uploadConfigFile', 'upload', 'fileOver', 'JSON-Datei hochladen', false);
+		JToolbarHelper::deleteList('', 'tvoteamslist.delete');
 	}
 }

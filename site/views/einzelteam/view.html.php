@@ -29,14 +29,6 @@ class TvoViewEinzelteam extends JViewLegacy
 		$this->team = 'Hello World site by view';
 		$this->team = $this->get('Team'); // calls model -> getTeam()
 
-		if($this->team == NULL) {
-
-
-			// ERROR HANDLING
-
-
-		}
-
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) {
 			JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
