@@ -51,5 +51,7 @@ class TvoViewTvoTeamsList extends JViewLegacy
 		JToolbarHelper::editList('tvosingleteam.edit');
 		JToolbarHelper::custom('tvofileupload.uploadConfigFile', 'upload', 'fileOver', 'JSON-Datei hochladen', false);
 		JToolbarHelper::deleteList('', 'tvoteamslist.delete');
+		// Options button if user is authorised
+    if (JFactory::getUser()->authorise('core.admin', 'com_tvo')) JToolBarHelper::preferences('com_tvo');
 	}
 }

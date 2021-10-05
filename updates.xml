@@ -4,7 +4,7 @@
         <description></description>
         <element>com_tvo</element>
         <type>component</type>
-        <version>0.0.13</version>
+        <version>0.0.14</version>
         <client>administrator</client>
         <infourl title="com_tvp Update Server" />
         <downloads>
