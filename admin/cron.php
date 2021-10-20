@@ -89,6 +89,7 @@ foreach($alleTeams as $team) {
  */
 echo '<p>Tables Data</p>';
 foreach($alleTeams as $team) {
+
    // Define new object to be stored in the database
    $team->tablesData = ComTvoHelper::getCurrentTableData($team->teamTableId);
    $object = new stdClass;
@@ -108,6 +109,12 @@ foreach($alleTeams as $team) {
    // Check if team already exists as record in the database. If yes => update, if no => insert
    if( $db->getNumRows() > 0 ) {
      $result = JFactory::getDbo()->updateObject('#__tvo_tables', $object, 'teamTableId', $updateNulls);
+
+     // Write league to team
+     $tempObject = new stdClass;
+
+     // $tempObject->teamLeague = $team->tableData->lvTypeLabelStr);
+     // $result = JFactory::getDbo()->updateObject('#__tvo_teams', $object, 'teamTableId', $updateNulls);
      print_r($team->teamTableId.': UPDATE<br />');
    }
    else {
