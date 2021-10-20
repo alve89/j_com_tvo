@@ -1,6 +1,6 @@
 <updates>
     <update>
-        <name>com_tvo Update Server</name>
+        <name>COM_TVO</name>
         <description></description>
         <element>com_tvo</element>
         <type>component</type>
